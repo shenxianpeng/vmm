@@ -2,6 +2,30 @@
 
 Jenkins integration with virtual machine management (VMM)
 
+1.Pipeline start
+
+  ![](img/pipeline-start.png)
+
+2. Pipeline result
+  ![Pipeline result](img/pipeline-result.png)
+  
+3. Archive file
+
+  ```
+  #####################################################
+  ######### VM login check via SSH results ############
+  #####################################################
+  #                                                   #
+  # Compelted (success) 14/16 (total) login vm check. #
+  #                                                   #
+  # Below 2 host(s) login faied, need to check.       #
+  #                                                   #
+       abc.company.com 
+       xyz.company.com 
+  #                                                   #
+  #####################################################
+  ```
+
 ## Backgroud
 
 In order to solve some important but infrequently used virtual machines, if the system is not logged in for a long time, it will be regarded as temporarily unused by the system, resulting in being shut down. When it is used again, it is necessary to ask the administrator to perform such troublesome operations.
@@ -30,6 +54,4 @@ I hope to use existing scripts (Jenkins) to use shell scripts and pipelines with
 
 ## Code implementation
 
-Refer to the repository code.
-
-Please note that the code here is just an example, and there may be some execution failures, but I think you'll be able to fix them very soon.
+Refer to the repository code. Please note that the code here is just an example, and there may be some execution failures, but I think you'll be able to fix them very soon.
