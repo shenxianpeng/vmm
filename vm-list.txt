@@ -1,0 +1,6 @@
+abc.company.com
+bcd.company.com
+efg.company.com
+efg.company.com
+eyz.company.com
+127.0.0.1
