@@ -1,13 +1,14 @@
-# vmm
+# VMM
+
 Jenkins integration with virtual machine management (VMM)
 
-## BACKGROUND
+## Backgroud
 
 In order to solve some important but infrequently used virtual machines, if the system is not logged in for a long time, it will be regarded as temporarily unused by the system, resulting in being shut down. When it is used again, it is necessary to ask the administrator to perform such troublesome operations.
 
 A script is required to log in regularly and execute simple commands to allow the system to determine that these virtual machines are active, so as not to shut it down.
 
-## demand analysis
+## Demand analysis
 
 From a background perspective, regular ssh login operations can be achieved through a simple shell script, but it will take some time to achieve more elegant.
 
