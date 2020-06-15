@@ -3,6 +3,7 @@
 username=$1
 password=$2
 input_host=$3
+remove_flag=$4 # if not empty will execute remove.
 
 vm_list=vm-list.txt
 
@@ -15,6 +16,10 @@ if [ ! -z $3 ]; then
     grep -x $3 $vm_list
     if [ $? -eq 0 ]; then
         echo "$3 exits in $vm_list file"
+        if [ -z $4 ]; then
+            echo "remove $3 from $vm_list"
+            sed -i "/$3/d" $vm_list
+        fi 
     else
         echo "append add $3 to $vm_list"
         echo "$3" >> $vm_list
