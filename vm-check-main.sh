@@ -27,7 +27,9 @@ f_count=0   # failed hostname count
 f_list=()   # failed hostname list
 
 while read -r line; do
-    echo "host is $line"
+    echo "#######################################"
+    echo "# start to connect $line "
+    echo "#######################################"
     t_count=$(($t_count+1))
     # source vm-expect-func.sh
     ./vm-expect-func.sh $line $username $password

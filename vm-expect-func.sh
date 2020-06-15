@@ -9,6 +9,7 @@ spawn ssh ${username}@$host
 expect {
     "yes/no" {send "yes\r";exp_continue}
     "assword" {send "${password}\r"}
+    timeout { exit 2 }
 }
 
 # list remote hostname
@@ -17,5 +18,6 @@ expect -re ".*
 \$#
 "
     send "hostname\r"
+    sleep 1
     send "exit\r"
     expect eof
