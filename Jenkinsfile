@@ -47,16 +47,16 @@ pipeline{
                     if (params.hostname.isEmpty()) {
                         // case 1: just run hostname in the list
                         sh "vm-check-main.sh ${GITHUB_USR} ${GITHUB_PSW} ${params.hostname}"
-                    else if (params.hostname.endsWith(".com")){
-                         if (params.remove) {
-                             // remove hostname from list, then run and commit into git.
-                             sh "vm-check-main.sh ${GITHUB_USR} ${GITHUB_PSW} ${params.hostname} 1"
-                             gitCommit("vm-list.txt", "remove ${params.hostname} from vm-list.txt")
-                         } else  {
-                             // add hostname from the list, then run and commit into git.
-                             sh "vm-check-main.sh ${GITHUB_USR} ${GITHUB_PSW} ${params.hostname}"
-                             git.Commit("vm-list.txt", "add ${params.hostname} into vm-list.txt")
-                         }
+                    else if (params.hostname.endsWith(".com")) {
+                        if (params.remove) {
+                            // remove hostname from list, then run and commit into git.
+                            sh "vm-check-main.sh ${GITHUB_USR} ${GITHUB_PSW} ${params.hostname} 1"
+                            gitCommit("vm-list.txt", "remove ${params.hostname} from vm-list.txt")
+                        } else  {
+                            // add hostname from the list, then run and commit into git.
+                            sh "vm-check-main.sh ${GITHUB_USR} ${GITHUB_PSW} ${params.hostname}"
+                            git.Commit("vm-list.txt", "add ${params.hostname} into vm-list.txt")
+                        }
                     } else {
                         error 'your input hostname looks like not full name, plese double check.'
                     }
